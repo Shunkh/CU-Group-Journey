@@ -1,0 +1,319 @@
+/* Main container for the journey */
+.journey-container {
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+body.journey-active .rubric-dropdown {
+  display: none;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.theme-toggle input[type="checkbox"] {
+  width: 40px;
+  height: 20px;
+  appearance: none;
+  background-color: #ccc;
+  outline: none;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle input[type="checkbox"]:checked {
+  background-color: #005fa3;
+}
+
+.theme-toggle input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle input[type="checkbox"]:checked::before {
+  transform: translateX(20px);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+body.dark-mode .journey-form,
+body.dark-mode .journey-map {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 2px solid #555;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group select:focus {
+  border-color: #00b4ff;
+}
+
+body.dark-mode .submit-btn {
+  background-color: #005fa3;
+}
+
+body.dark-mode .submit-btn:hover {
+  background-color: #0074cc;
+}
+
+body.dark-mode .map-container {
+  background-color: #1e1e1e;
+  border-color: #444;
+}
+
+
+.journey-main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* Left side rubric */
+.rubric-column {
+  max-width: 300px;
+  width: 100%;
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.rubric-dropdown {
+  width: 100%;
+}
+
+.rubric-dropdown select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Animate rubric */
+.rubric-card {
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  animation: fadeInSlide 0.4s ease-in-out;
+  text-align: left;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rubric-card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #003b73;
+  margin-bottom: 10px;
+}
+
+.rubric-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rubric-card ul li {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Form Styling */
+.journey-form {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  flex: 1;
+  text-align: left;
+}
+
+.form-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #003b73;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #003b73;
+}
+
+.form-group input,
+.form-group select {
+  padding: 14px;
+  font-size: 18px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #0056a3;
+  outline: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #003b73;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0056a3;
+}
+
+/* Journey Map Section */
+.journey-map {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.journey-map h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #003b73;
+}
+
+.map-container {
+  height: 500px;
+  width: 100%;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+/* React Flow Nodes */
+.react-flow__node-default {
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.react-flow__node-default .description {
+  font-size: 12px;
+  margin-top: 5px;
+  word-wrap: break-word;
+}
+
+.react-flow__node-default .duration {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.custom-node {
+  padding: 10px;
+  background-color: lightblue;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+}
+
+.custom-node h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.custom-node p {
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .journey-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .journey-form {
+    width: 100%;
+  }
+
+  .rubric-column {
+    width: 100%;
+  }
+
+  .rubric-dropdown {
+    width: 100%;
+  }
+
+  .rubric-card {
+    max-width: 100%;
+  }
+}

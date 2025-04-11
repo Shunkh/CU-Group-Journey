@@ -1,0 +1,29 @@
+/* HERO SECTION */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url('https://lh3.googleusercontent.com/p/AF1QipN777yyjqxeAzxj7kVSB3pA_WB22lZkvlRxDjd5=s680-w680-h510')
+                no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: white;
+}
+
+.hero-content {
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
